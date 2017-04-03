@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 
 var HtmlWebpackConfigPlugin = new HtmlWebpackPlugin({
@@ -29,7 +29,8 @@ const webpack = {
         }]
     },
 
-    plugins: [HtmlWebpackConfigPlugin]
+    plugins: [HtmlWebpackConfigPlugin,
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' })]
 
 }
 
